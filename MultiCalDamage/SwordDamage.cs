@@ -14,8 +14,10 @@ namespace MultiCalDamage
         public int Roll;
         public decimal MagicMultiplier = 1M;
         public int FlamingDamage = 0;
-        public int Damage;
-        
+                
+
+        public int Damage { get; set; }
+
         public void CalculateDamage()
         {
             Damage = (int)(Roll * MagicMultiplier) + BASE_DAMAGE + FlamingDamage;
