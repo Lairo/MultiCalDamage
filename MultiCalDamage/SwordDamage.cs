@@ -11,7 +11,11 @@ namespace MultiCalDamage
         public const int BASE_DAMAGE = 3;
         public const int FLAME_DAMAGE = 2;
 
-        public int Roll;
+        private int roll;
+
+        public int Roll { get; set; }
+
+
         public decimal MagicMultiplier = 1M;
         public int FlamingDamage = 0;
                 
