@@ -17,6 +17,9 @@ namespace MultiCalDamage
 
 
         public decimal MagicMultiplier = 1M;
+
+        public decimal MagicDamage { get; set; }
+
         public int FlamingDamage = 0;
                 
 
