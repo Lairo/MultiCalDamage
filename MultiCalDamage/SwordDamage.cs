@@ -20,7 +20,9 @@ namespace MultiCalDamage
 
         public decimal MagicDamage { get; set; }
 
-        public int FlamingDamage = 0;
+        public int FlamingDamage { get; set; }
+
+        public int flamingDamage = 0;
                 
 
         public int Damage { get; set; }
