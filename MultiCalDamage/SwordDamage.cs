@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MultiCalDamage
+﻿namespace MultiCalDamage
 {
     internal class SwordDamage
     {
@@ -13,45 +7,58 @@ namespace MultiCalDamage
 
         private int roll;
 
-        public int Roll { get; set; }
-
-
-        public decimal MagicMultiplier = 1M;
-
-        public decimal MagicDamage { get; set; }
-
-        public int FlamingDamage { get; set; }
-
-        public int flamingDamage = 0;
-                
-
-        public int Damage { get; set; }
-
-        public void CalculateDamage()
+        public int Roll
         {
-            Damage = (int)(Roll * MagicMultiplier) + BASE_DAMAGE + FlamingDamage;
+            get { return roll; }
+            set
+            {
+                roll = value;
+                CalculateDamage();
+            }
+
         }
 
-        public void SetMagic(bool isMagic)
+        public bool flaming;
+
+        public bool Flaming
         {
-            if (isMagic)
+            get { return flaming; }
+            set
             {
-                MagicMultiplier = 1.75M;
+                flaming = value;
+                CalculateDamage();
             }
-            else
-            {
-                MagicMultiplier = 1M;
-            }
-            CalculateDamage();
+
         }
 
-        public void SetFlaming(bool isFlaming)
+        public bool magic;
+
+        public bool Magic
         {
-            CalculateDamage();
-            if (isFlaming)
+            get { return magic; }
+            set
             {
-                Damage += FLAME_DAMAGE;
+                magic = value; CalculateDamage();
             }
+        }
+
+        public int Damage { get; private set; }
+
+        private void CalculateDamage()
+        {
+            decimal magicMultiplier = 1M;
+            if (Magic) magicMultiplier = 1.75M;
+
+            Damage = BASE_DAMAGE;
+            Damage = (int)(Roll * magicMultiplier) + BASE_DAMAGE;
+            if (Flaming) Damage += FLAME_DAMAGE;
+        }
+
+        public SwordDamage(int StartingRoll)
+        {
+            roll = StartingRoll;
+            CalculateDamage();
+
         }
     }
 }
