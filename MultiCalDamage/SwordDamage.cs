@@ -16,7 +16,6 @@
             Damage = (int)(Roll * magicMultiplier) + BASE_DAMAGE;
             if (Flaming) Damage += FLAME_DAMAGE;
         }
-
         
     }
 }
