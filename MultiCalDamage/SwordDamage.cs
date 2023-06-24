@@ -1,50 +1,13 @@
 ﻿namespace MultiCalDamage
 {
-    internal class SwordDamage
+    class SwordDamage : WeaponDamage
     {
         public const int BASE_DAMAGE = 3;
         public const int FLAME_DAMAGE = 2;
 
-        private int roll;
+        public SwordDamage(int StartingRoll) : base(StartingRoll) { }
 
-        public int Roll
-        {
-            get { return roll; }
-            set
-            {
-                roll = value;
-                CalculateDamage();
-            }
-
-        }
-
-        private bool flaming;
-
-        public bool Flaming
-        {
-            get { return flaming; }
-            set
-            {
-                flaming = value;
-                CalculateDamage();
-            }
-
-        }
-
-        private bool magic;
-
-        public bool Magic
-        {
-            get { return magic; }
-            set
-            {
-                magic = value; CalculateDamage();
-            }
-        }
-
-        public int Damage { get; private set; }
-
-        private void CalculateDamage()
+        protected override void CalculateDamage()
         {
             decimal magicMultiplier = 1M;
             if (Magic) magicMultiplier = 1.75M;
@@ -54,11 +17,6 @@
             if (Flaming) Damage += FLAME_DAMAGE;
         }
 
-        public SwordDamage(int StartingRoll)
-        {
-            roll = StartingRoll;
-            CalculateDamage();
-
-        }
+        
     }
 }

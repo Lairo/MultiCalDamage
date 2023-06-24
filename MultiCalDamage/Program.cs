@@ -2,7 +2,7 @@
 
 namespace MultiCalDamage
 {
-    internal class Program
+    class Program
     {
         static Random random = new Random();
 
