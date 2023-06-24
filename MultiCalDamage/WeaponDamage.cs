@@ -43,7 +43,10 @@ namespace MultiCalDamage
 
         public int Damage { get; protected set; }
 
-        protected virtual void CalculateDamage() { }
+        protected virtual void CalculateDamage() 
+        {
+            Console.WriteLine("This statement will never get called.");
+        }
 
         public WeaponDamage(int StartingRoll) 
         {

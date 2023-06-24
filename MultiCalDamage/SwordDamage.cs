@@ -2,8 +2,8 @@
 {
     class SwordDamage : WeaponDamage
     {
-        public const int BASE_DAMAGE = 3;
-        public const int FLAME_DAMAGE = 2;
+        private const int BASE_DAMAGE = 3;
+        private const int FLAME_DAMAGE = 2;
 
         public SwordDamage(int StartingRoll) : base(StartingRoll) { }
 
