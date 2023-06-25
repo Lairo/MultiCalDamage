@@ -6,8 +6,7 @@ namespace MultiCalDamage
     {
         static Random random = new Random();
 
-
-        static void Main(string[] args)
+        static void Main()
         {
             SwordDamage swordDamage = new SwordDamage(RollDice(3));
             ArrowDamage arrowDamage = new ArrowDamage(RollDice(1));

@@ -37,7 +37,8 @@ namespace MultiCalDamage
             get { return magic; }
             set
             {
-                magic = value; CalculateDamage();
+                magic = value;
+                CalculateDamage();
             }
         }
 
